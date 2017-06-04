@@ -1,0 +1,31 @@
+<?php include __DIR__.'/header.html'; ?>
+
+    <div class="container">
+        <div class="row">
+            <br><br>
+            <h1>Posts Doctrine</h1>
+            <div class="col-md-10">
+                <ul class="list-unstyled">
+                    <li>
+                        <?php foreach ($posts as $post): ?>
+                            <div class="jumbotron">
+                                <h1><?= $post->getTitle(); ?></h1>
+                                <p><?= substr($post->getContent(), 0, 500); ?>...</p>
+                                <p><a href="#" class="btn btn-primary btn-lg" role="button">Leia mais</a></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="list-group">
+                    <?php foreach ($categories as $category): ?>
+                        <li class="list-group-item">
+                            <a href="/?search=<?= $category->getId(); ?>"><?= $category->getName(); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+<?php include __DIR__.'/footer.html'; ?>

@@ -1,0 +1,19 @@
+<?php include __DIR__.'/../header.html'; ?>
+
+    <div class="container">
+        <div class="row">
+            <h1>Novo Post</h1>
+            <form method="post" name="form" action="/posts/store">
+                <div class="form-group">
+                    <label for="title">Titulo</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Digite o titulo">
+                </div>
+                <div class="form-group">
+                    <label for="content">Conteudo</label>
+                    <textarea  class="form-control" id="content" rows="8" name="content" placeholder="Digite o Conteudo"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+<?php include __DIR__.'/../footer.html'; ?>

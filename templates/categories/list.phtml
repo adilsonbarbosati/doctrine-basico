@@ -1,0 +1,33 @@
+<?php include __DIR__.'/../header.html'; ?>
+
+    <div class="container">
+        <div class="row">
+            <br><br>
+            <h1>Listagem de Categorias</h1>
+            <table class="table table-striped table-hover table-bordered">
+                <thead >
+                    <tr>
+                        <th class="info">ID</th>
+                        <th class="info">Nome</th>
+                        <th class="info"></th>
+                        <th class="info"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($categories as $category) : ?>
+                <tr>
+                    <td><?= $category->getId(); ?></td>
+                    <td><?= $category->getName(); ?></td>
+                    <td> <?php echo "<a class='btn btn-success' href='/categories/{$category->getId()}/edit'>Editar</a>"; ?></td>
+                    <td> <?php echo "<a class='btn btn-danger' href='/categories/{$category->getId()}/remove'>Excluir</a>"; ?></td>
+                </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+            <br>
+            <a href="/categories/create" style="float: right" class="btn btn-primary">Nova categoria</a>
+            <br>
+            <br>
+        </div>
+    </div>
+<?php include __DIR__.'/../footer.html'; ?>

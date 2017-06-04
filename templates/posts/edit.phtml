@@ -1,0 +1,21 @@
+<?php include __DIR__.'/../header.html'; ?>
+
+    <div class="container">
+        <div class="row">
+            <h1>Editar Post</h1>
+            <form method="post" name="form" action="<?php echo "/posts/{$post->getId()}/update"; ?>">
+                <div class="form-group">
+                    <label for="title">Titulo</label>
+                    <input type="text" class="form-control" id="title"  value="<?= $post->getTitle(); ?>" name="title" placeholder="Digite o titulo">
+                </div>
+                <div class="form-group">
+                    <label for="content">Conteudo</label>
+                    <textarea type="text" class="form-control" id="content" name="content" placeholder="Digite o Conteudo">
+                    <?= $post->getContent(); ?>
+                    </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+<?php include __DIR__.'/../footer.html'; ?>

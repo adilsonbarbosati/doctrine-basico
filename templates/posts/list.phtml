@@ -1,0 +1,35 @@
+<?php include __DIR__.'/../header.html'; ?>
+
+    <div class="container">
+        <div class="row">
+            <br><br>
+            <h1>Listagem de Posts</h1>
+            <table class="table table-striped table-hover table-bordered">
+                <thead >
+                    <tr>
+                        <th class="info">ID</th>
+                        <th class="info">Titulo</th>
+                        <th class="info"></th>
+                        <th class="info"></th>
+                        <th class="info"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($posts as $post) : ?>
+                <tr>
+                    <td><?= $post->getId(); ?></td>
+                    <td><?= $post->getTitle(); ?></td>
+                    <td> <?php echo "<a class='btn btn-default' href='posts/{$post->getId()}/categories'>Categorias</a>"; ?></td>
+                    <td> <?php echo "<a class='btn btn-success' href='posts/{$post->getId()}/edit'>Editar</a>"; ?></td>
+                    <td> <?php echo "<a class='btn btn-danger' href='/posts/{$post->getId()}/remove'>Excluir</a>"; ?></td>
+                </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+            <br>
+            <a href="/posts/create" style="float: right" class="btn btn-primary">Novo post</a>
+            <br>
+            <br>
+        </div>
+    </div>
+<?php include __DIR__.'/../footer.html'; ?>
